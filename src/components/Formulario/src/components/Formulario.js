@@ -4,7 +4,12 @@ export default {
     props: [],
     data () {
       return {
+        formState : {},
         datos : this.getInicialData(),
+        nombreMinLength : 5,
+        nombreMaxLength : 15,
+        edadMin: 18,
+        edadMax: 120
       }
     },
     computed: {
@@ -24,6 +29,7 @@ export default {
       enviar() {
         console.log({...this.datos})
         this.datos = this.getInicialData()
+        this.formState._reset()  
       }
     }
   }

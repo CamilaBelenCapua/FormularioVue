@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid">
-    <div class="jumbotron">
+    <div>
       <h1>Bienvenidos a VueJS CLI</h1>
       <br>
       <Formulario/>
@@ -24,5 +24,4 @@ export default {
   h1 {
     color: rgb(255, 106, 0);    
   }
-
 </style>
