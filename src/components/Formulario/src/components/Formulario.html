@@ -1,0 +1,68 @@
+<section class="src-componentes-formulario">
+    <div>
+      <h2>Formulario</h2>
+  
+      <form novalidate @submit.prevent="enviar()">
+  
+        <!-- Campo nombre -->
+        <div class="form-group">
+          <label for="nombreCompleto">Nombre completo</label>
+          <input 
+            id="nombreCompleto" 
+            class="form-control" 
+            type="text"
+            v-model.trim="datos.nombreCompleto"
+          >
+          
+          <div v-if="!datos.nombreCompleto || datos.nombreCompleto.length<5 || datos.nombreCompleto.length>15" class="alert alert-danger mt-1">
+            <div v-if="!datos.nombreCompleto">El campo nombre completo es requerido</div>
+            <div v-else-if="datos.nombreCompleto.length>15">Campo debe tener menos de 15 caracteres</div>
+            <div v-else-if="datos.nombreCompleto.length<5">Campo debe tener mas de 5 caracteres</div>
+          </div>
+
+        </div>
+
+        <!-- Campo edad -->
+        <div class="form-group">
+          <label for="edad">Edad</label>
+          <input 
+            id="edad" 
+            class="form-control" 
+            type="number"
+            v-model.number="datos.edad"
+          >
+
+          <div v-if="!datos.edad || datos.edad<18 || datos.edad>120" class="alert alert-danger mt-1">
+            <div v-if="!datos.edad">El campo edad es requerido</div>
+            <div v-else-if="datos.edad<18 || datos.edad>120">La edad debe ser entre 18 y 120 años</div>
+          </div>
+
+        </div>
+  
+        <!-- Campo email -->
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input 
+            id="email" 
+            class="form-control" 
+            type="email"
+            v-model="datos.email"
+          >
+        </div>
+
+        <div v-if="!datos.email" class="alert alert-danger mt-1">
+          <div v-if="!datos.email">El campo email es requerido</div>
+        </div>
+        
+        <button class="btn btn-success my-3" :disabled = "!datos.nombreCompleto || datos.nombreCompleto.length<5 || !datos.nombreCompleto.length>15 || !datos.edad || datos.edad<18 || datos.edad>120 || !datos.email">Enviar</button>
+  
+      </form>
+
+      <hr>
+      <p><u>Datos</u></p>
+      <pre>{{ datos }}</pre>
+
+    </div>
+  </section>
+  
+  

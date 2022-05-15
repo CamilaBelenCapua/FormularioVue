@@ -1,28 +1,28 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container-fluid">
+    <div class="jumbotron">
+      <h1>Bienvenidos a VueJS CLI</h1>
+      <br>
+      <Formulario/>
+    </div> 
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import Formulario from './components/Formulario/IndexFormulario.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    Formulario
+   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  h1 {
+    color: rgb(255, 106, 0);    
+  }
+
 </style>
